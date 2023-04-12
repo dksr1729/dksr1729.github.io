@@ -37,12 +37,12 @@
         <center>
 
             <input id="trnscns" type="text" name="trnscns"></input>
-            <center><button onclick="transactionsfromapp();"><h1>fetch transactions</h1></button></center>
+            <center><button onclick="transactionsfromapp()"><h1>update transactions</h1></button></center>
             </center>
         <script type="text/javascript">
             
             function transactionsfromapp(val){
-                document.getElementById('trnscns').value= val;
+                document.write(val);
             }
             function fetchtrnscns(){
                 Dialog.updatethetrnscns();
