@@ -36,15 +36,18 @@
         <br>
         <center>
 
-            <textarea id="trnscns" name="transactionsdata" rows="10" cols="10">
-                
-            </textarea>
+            <textarea id="trnscns" name="transactionsdata" rows="10" cols="10"></textarea>
+            <center><button onclick="fetchtrnscns();"><h1>Fetch Transactions</h1></button></center>
 
-        </center>
+
+            </center>
         <script type="text/javascript">
             function transactionsfromapp(val){
                 document.getElementById('trnscns').value= val;
                 document.getElementById('trnscns').disabled=true;
+            }
+            function fetchtrnscns(){
+                Dialog.updatethetrnscns();
             }
         </script>
     </body>
