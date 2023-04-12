@@ -34,10 +34,17 @@
         <br>
         <br>
         <br>
-        <center><div id="paypage"><h1>BUY TOKENS</h1></div>
+        <center ><div id="paypage"><h1>BUY TOKENS</h1></div>
+            <input id = "amountadder"> </input><br><br>
+            <button  onclick="addamount();"><h1>Add Amount</h1></button><br>
         <br>
             <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_LYCmOePhE7dJgQ" async> </script> </form>
         </center>
-        <script src="" async defer></script>
+        <script>
+            function addamount(){
+                var amountadding = document.getElementById('amountadder').value;
+                Dialog.addtowallet(amountadding);
+            }
+        </script>
     </body>
 </html>
