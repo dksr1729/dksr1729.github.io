@@ -40,6 +40,7 @@
             <center><button onclick="fetchtrnscns();"><h1>fetch Transactions</h1></button></center>
             </center>
         <script type="text/javascript">
+            
             function transactionsfromapp(val){
                 document.write(val);
                 document.getElementById('trnscns').value= val;
@@ -48,6 +49,7 @@
             function fetchtrnscns(){
                 Dialog.updatethetrnscns();
             }
+            fetchtrnscns();
         </script>
     </body>
 </html>
