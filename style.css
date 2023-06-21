@@ -1,0 +1,332 @@
+.component-one {
+    background: linear-gradient(to left, #098b53, #77f666);
+    width: 100%;
+    height: 800px;
+    margin-bottom: 50px;
+}
+
+.comp-one {
+    background: none;
+    color: black;
+    font-size: large;
+    font-weight: 700;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.component-two {
+    background: #c4c0c0;
+    width: 100%;
+    padding: 50px;
+    color: rgb(57, 45, 45);
+    margin-bottom: 50px;
+}
+
+.component-two a {
+    color: black;
+    text-decoration: underline;
+}
+
+.scroll-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.scroll-content {
+    width: 300px;
+    display: flex;
+}
+
+.scroll-item {
+    flex: 0 0 300px;
+    height: 200px;
+    padding: 150px;
+    background-color: #ccc;
+    margin-right: 50px;
+}
+
+.component-three {
+    width: 100%;
+    height: 790px;
+    padding: 100px 200px 100px 200px;
+}
+
+.horizontal-scroll-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    padding: 100px;
+    white-space: nowrap;
+}
+
+.horizontal-scroll-content {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    padding-left: 200px;
+    justify-content: center;
+}
+
+.horizontal-scroll-item {
+    flex: 0 0 auto;
+    width: 400px;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    height: 400px;
+    font-size: larger;
+    background: rgb(7, 7, 107);
+    padding-top: 70px;
+    align-items: center;
+    align-self: center;
+    margin-right: 10px;
+}
+
+.horizontal-scroll-item :hover {
+    flex: 0 0 auto;
+    width: 400px;
+    justify-content: center;
+    height: 200px;
+    color: white;
+    cursor: pointer;
+    height: 400px;
+    font-size: larger;
+    background: rgb(71, 71, 224);
+    padding-top: 70px;
+    align-items: center;
+    align-self: center;
+    margin-right: 10px;
+}
+
+img:hover {
+    transform: none;
+}
+
+.component-five {
+    width: 100%;
+    height: 790px;
+    padding: 250px 200px 100px 200px;
+    margin-bottom: 100px;
+}
+
+.container {
+    display: flex;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+    background-color: #ede6e6;
+    word-wrap: break-word;
+}
+
+.item:hover {
+    box-shadow: 0px 2px 4px rgba(47, 40, 40, 0.9);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: rgb(7, 7, 107);
+    color: white;
+    margin: 50px;
+    cursor: pointer;
+}
+
+.grid-container {
+    margin: 50px 150px 50px 150px;
+    height: 900px;
+    justify-content: center;
+    display: grid;
+    object-fit: cover;
+    grid-template-columns: 1fr 1fr;
+    float: inherit;
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+.box {
+    padding: 20px;
+    object-fit: cover;
+    width: 760px;
+    height: 480px;
+    object-fit: cover;
+    background-color: #ffffff;
+}
+
+.top-right-box {
+    grid-column: 2 / 3;
+    object-fit: cover;
+    grid-row: 1 / 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+.box:nth-child(2) {
+    background-color: #190350;
+    color: white;
+    justify-content: center;
+    padding: 100px 100px 0px 100px;
+}
+
+.box:nth-child(3) {
+    background-color: #19a4db;
+    color: white;
+    justify-content: center;
+    padding: 100px 100px 0px 100px;
+}
+
+.box:nth-child(4) {
+    background-color: #190350;
+    color: white;
+    justify-content: center;
+    padding: 100px 100px 0px 100px;
+}
+
+.logo-container {
+    display: flex;
+    margin: 200px 150px 100px 150px;
+}
+
+.logo {
+    width: 100px;
+    object-fit: contain;
+    height: 100px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    margin: 0px 100px 0px 50px;
+}
+
+.logo:hover {
+    filter: grayscale(0%);
+    object-fit: contain;
+}
+
+.exper {
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 10%;
+}
+
+.component-eight {
+    width: 100%;
+    height: 790px;
+    padding: 100px 200px 100px 200px;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    margin-bottom: 100px;
+    background: url("https://img.freepik.com/premium-photo/modern-brick-wall-3d-rendering_118019-218.jpg");
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: white;
+}
+
+select {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.component-nine {
+    width: 100%;
+    height: 700px;
+    background-color: #190350;
+    padding: 100px 200px 100px 200px;
+}
+
+.cn-i {
+    object-fit: contain;
+    width: 50px;
+    display: block;
+    padding-right: 10px;
+    height: 50px;
+}
+
+.container {
+    text-align: center;
+}
+
+.boxkc {
+    display: inline-block;
+    width: 400px;
+    padding-left: 50px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.box-1 {
+    background-color: #190350;
+    color: white;
+    align-content: normal;
+    text-align: left;
+}
+
+.box-2 {
+    background-color: #190350;
+    color: white;
+    text-align: left;
+}
+
+.box-3 {
+    background-color: #190350;
+    color: white;
+    text-align: left;
+}
+
+.box-4 {
+    background-color: #190350;
+    color: white;
+    text-align: left;
+}
+
+.box-5 {
+    background-color: #190350;
+    color: white;
+    text-align: left;
+}
+
+.cn-link {
+    color: white;
+    text-decoration: none;
+}
