@@ -2,11 +2,9 @@
 <html>
 <head>
     <title>D Karthik Sainadh Reddy - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -17,43 +15,98 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
+                    <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Journey</a>
+                    <a class="nav-link" href="#journey">My Journey</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="resume.pdf" download>Resume</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div id="particles-js"></div>
-    <div class="content">
-        <div class="profile">
-            <img src="profile-image.png" alt="Profile Image">
+
+    <section id="home" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="name">D Karthik Sainadh Reddy</h1>
+                    <p class="details">CSE cyber security and blockchain technology</p>
+                    <p class="details">2024 grad from SASTRA University</p>
+                    <p class="details">Full stack web developer and AI enthusiast</p>
+                </div>
+                <div class="col-md-6">
+                    <img class="profile-image" src="profile-image.png" alt="Profile Image">
+                </div>
+            </div>
         </div>
-        <div class="details">
-            <h1>D Karthik Sainadh Reddy</h1>
-            <p>CSE cyber security and blockchain technology</p>
-            <p>2024 grad from SASTRA University</p>
-            <p>Full stack web developer and AI enthusiast</p>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project">
+                        <h3 class="project-title">Project 1</h3>
+                        <p class="project-description">Description of Project 1</p>
+                        <div class="project-video">
+                            <!-- Embed your video here (e.g., YouTube embed code) -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project">
+                        <h3 class="project-title">Project 2</h3>
+                        <p class="project-description">Description of Project 2</p>
+                        <div class="project-video">
+                            <!-- Embed your video here (e.g., YouTube embed code) -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="project">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-description">Description of Project 3</p>
+                        <div class="project-video">
+                            <!-- Embed your video here (e.g., YouTube embed code) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <footer>
-        <div class="contact">
-            <a href="tel:8328423151"><i class="fas fa-phone"></i></a>
-            <a href="mailto:karthiksainadhreddy@gmail.com"><i class="fas fa-envelope"></i></a>
+    </section>
+
+    <section id="journey" class="section">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <p class="journey-details">
+                Details about your schooling and intern experience.
+            </p>
         </div>
-    </footer>
-    
-    <script>
-        particlesJS.load('particles-js', 'particles.json', function() {
-            console.log('Particles.js loaded');
-        });
-    </script>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-icons">
+                <a href="tel:8328423151"><i class="fas fa-phone"></i></a>
+                <a href="mailto:karthiksainadhreddy@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/your-github-link"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/your-linkedin-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/your-instagram-id/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
