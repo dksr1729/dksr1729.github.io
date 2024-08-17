@@ -223,6 +223,8 @@
             <button id="fetchFromCookiesBtn">Fetch from Cookies</button> <!-- Added button -->
             <button id="showCookiesBtn">Show Cookies</button>
             <button id="clearCookiesBtn">Clear Cookies</button>
+            <button id="removePersonBtn">Remove Person</button>
+            <button id="removePaymentBtn">Remove Payment</button>
         </div>
         
         <!-- Popup to display cookies -->
@@ -277,6 +279,32 @@
                 <div id="peopleCheckboxes"></div>
                 <button id="savePaymentBtn">Save</button>
                 <span id="closePaymentPopupBtn" class="close">&times;</span>
+            </div>
+        </div>
+
+        <!-- Remove Person Popup -->
+        <div id="removePersonPopup" class="popup">
+            <div class="popup-content">
+                <span id="closeRemovePersonPopupBtn" class="close">&times;</span>
+                <h2>Remove a person</h2>
+                <label for="removePerson">Select person to remove:</label>
+                <select id="removePerson" class="dropdown">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button id="confirmRemovePersonBtn">Remove</button>
+            </div>
+        </div>
+
+        <!-- Remove Payment Popup -->
+        <div id="removePaymentPopup" class="popup">
+            <div class="popup-content">
+                <span id="closeRemovePaymentPopupBtn" class="close">&times;</span>
+                <h2>Remove a payment</h2>
+                <label for="removePayment">Select payment to remove:</label>
+                <select id="removePayment" class="dropdown">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <button id="confirmRemovePaymentBtn">Remove</button>
             </div>
         </div>
 

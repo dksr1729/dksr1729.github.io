@@ -128,6 +128,70 @@ document.getElementById('clearCookiesBtn').addEventListener('click', () => {
     displayPaymentsMade();
 });
 
+document.getElementById('removePersonBtn').addEventListener('click', () => {
+    document.getElementById('removePersonPopup').style.display = 'flex';
+    populateRemovePersonDropdown();
+});
+
+document.getElementById('closeRemovePersonPopupBtn').addEventListener('click', () => {
+    document.getElementById('removePersonPopup').style.display = 'none';
+});
+
+document.getElementById('confirmRemovePersonBtn').addEventListener('click', () => {
+    const personToRemove = document.getElementById('removePerson').value;
+    if (personToRemove) {
+        delete peopleData[personToRemove];
+        paymentsHistory.forEach(payment => {
+            payment.involved = payment.involved.filter(person => person !== personToRemove);
+        });
+        updatePayerDropdown();
+        displayPeople();
+        displayPaymentsMade();
+        document.getElementById('removePersonPopup').style.display = 'none';
+    }
+});
+
+document.getElementById('removePaymentBtn').addEventListener('click', () => {
+    document.getElementById('removePaymentPopup').style.display = 'flex';
+    populateRemovePaymentDropdown();
+});
+
+document.getElementById('closeRemovePaymentPopupBtn').addEventListener('click', () => {
+    document.getElementById('removePaymentPopup').style.display = 'none';
+});
+
+document.getElementById('confirmRemovePaymentBtn').addEventListener('click', () => {
+    const paymentToRemove = document.getElementById('removePayment').value;
+    if (paymentToRemove) {
+        paymentsHistory = paymentsHistory.filter(payment => payment.id !== paymentToRemove);
+        displayPaymentsMade();
+        document.getElementById('removePaymentPopup').style.display = 'none';
+    }
+});
+
+function populateRemovePersonDropdown() {
+    const removePersonDropdown = document.getElementById('removePerson');
+    removePersonDropdown.innerHTML = '';
+    for (const person in peopleData) {
+        const option = document.createElement('option');
+        option.value = person;
+        option.text = person;
+        removePersonDropdown.appendChild(option);
+    }
+}
+
+function populateRemovePaymentDropdown() {
+    const removePaymentDropdown = document.getElementById('removePayment');
+    removePaymentDropdown.innerHTML = '';
+    paymentsHistory.forEach((payment, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.text = `${payment.payer} paid ₹${payment.amount} for ${payment.note}`;
+        removePaymentDropdown.appendChild(option);
+    });
+}
+
+
 function updatePayerDropdown() {
     const payerDropdown = document.getElementById('payer');
     payerDropdown.innerHTML = '';
