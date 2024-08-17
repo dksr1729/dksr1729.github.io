@@ -57,11 +57,11 @@ document.getElementById('savePaymentBtn').addEventListener('click', () => {
     if (payer && !isNaN(amount) && selectedPeople.length > 0) {
         const splitAmount = amount / selectedPeople.length;
 
+        // Update payer's amount
         peopleData[payer].push(amount);
+        // Update other people's amounts
         selectedPeople.forEach(person => {
-            if (person !== payer) {
-                peopleData[person].push(-splitAmount);
-            }
+            peopleData[person].push(-splitAmount);
         });
 
         paymentsHistory.push({ payer, amount, note, involved: selectedPeople });
@@ -70,6 +70,7 @@ document.getElementById('savePaymentBtn').addEventListener('click', () => {
         document.getElementById('addPaymentPopup').style.display = 'none';
     }
 });
+
 document.getElementById('saveToCookiesBtn').addEventListener('click', () => {
     saveCookie('peopleData', JSON.stringify(peopleData), 30);
     saveCookie('paymentsHistory', JSON.stringify(paymentsHistory), 30);
