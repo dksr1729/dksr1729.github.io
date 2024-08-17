@@ -1,112 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>D Karthik Sainadh Reddy - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">D Karthik Sainadh Reddy</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#journey">My Journey</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="resume.pdf" download>Resume</a>
-                </li>
-            </ul>
+    <div class="container">
+        <h1>Expense Splitter</h1>
+        <div class="buttons">
+            <button id="addPersonBtn">Add Person</button>
+            <button id="addPaymentBtn">Add Payment</button>
+            <button id="calculatePaymentsBtn">Calculate Payments</button>
+            <button id="saveToCookiesBtn">Save to Cookies</button>
+            <button id="fetchFromCookiesBtn">Fetch from Cookies</button> <!-- Added button -->
+            <button id="showCookiesBtn">Show Cookies</button>
+            <button id="clearCookiesBtn">Clear Cookies</button>
         </div>
-    </nav>
-
-    <section id="home" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="name">D Karthik Sainadh Reddy</h1>
-                    <p class="details">CSE cyber security and blockchain technology</p>
-                    <p class="details">2024 grad from SASTRA University</p>
-                    <p class="details">Full stack web developer and AI enthusiast</p>
-                </div>
-                <div class="col-md-6">
-                    <img class="profile-image" src="profile-image.png" alt="Profile Image">
-                </div>
+        
+        
+        
+        <!-- Popup to display cookies -->
+        <div id="showCookiesPopup" class="popup">
+            <div class="popup-content">
+                <span id="closeShowCookiesPopupBtn" class="close">&times;</span>
+                <h2>Stored Cookies</h2>
+                <pre id="cookiesData"></pre> <!-- Added to display cookies -->
             </div>
         </div>
-    </section>
+        
 
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="project">
-                        <h3 class="project-title">Project 1</h3>
-                        <p class="project-description">Description of Project 1</p>
-                        <div class="project-video">
-                            <!-- Embed your video here (e.g., YouTube embed code) -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project">
-                        <h3 class="project-title">Project 2</h3>
-                        <p class="project-description">Description of Project 2</p>
-                        <div class="project-video">
-                            <!-- Embed your video here (e.g., YouTube embed code) -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="project">
-                        <h3 class="project-title">Project 3</h3>
-                        <p class="project-description">Description of Project 3</p>
-                        <div class="project-video">
-                            <!-- Embed your video here (e.g., YouTube embed code) -->
-                        </div>
-                    </div>
-                </div>
+        <div id="peopleList" class="display-section">
+            <h2>People</h2>
+            <ul id="peopleDisplay"></ul>
+        </div>
+
+        <div id="paymentsList" class="display-section">
+            <h2>Payments Made</h2>
+            <ul id="paymentsDisplay"></ul>
+        </div>
+
+        <div id="result" class="display-section">
+            <h2>Payments to Settle</h2>
+        </div>
+
+        <!-- Add Person Popup -->
+        <div id="addPersonPopup" class="popup">
+            <div class="popup-content">
+                <span id="closePersonPopupBtn" class="close">&times;</span>
+                <h2>Add a new person</h2>
+                <input type="text" id="newPerson" placeholder="Person's name">
+                <button id="savePersonBtn">Save</button>
             </div>
         </div>
-    </section>
 
-    <section id="journey" class="section">
-        <div class="container">
-            <h2 class="section-title">My Journey</h2>
-            <p class="journey-details">
-                Details about your schooling and intern experience.
-            </p>
-        </div>
-    </section>
+        <!-- Add Payment Popup -->
+<!-- Add Payment Popup -->
+<div id="addPaymentPopup" class="popup">
+    <div class="popup-content">
+        
+        <h2>Add a payment</h2>
+        <label for="payer">Who paid:</label>
+        <select id="payer" class="dropdown">
+            <!-- Options will be populated dynamically -->
+        </select>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="Amount paid">
+        <label for="note">Note:</label>
+        <input type="text" id="note" placeholder="What was this payment for?">
+        <h3>Select people involved:</h3>
+        <div id="peopleCheckboxes"></div>
+        <button id="savePaymentBtn">Save</button>
+        <span id="closePaymentPopupBtn" class="close">&times;</span>
+    </div>
+</div>
 
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-icons">
-                <a href="tel:8328423151"><i class="fas fa-phone"></i></a>
-                <a href="mailto:karthiksainadhreddy@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/your-github-link"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/your-linkedin-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/your-instagram-id/"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
